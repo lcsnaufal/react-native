@@ -26,6 +26,7 @@ export default function InputData(){
             elevation: 5,
             borderRadius: 45,
             padding: 10,
+            margin: 20,
         },
         text: {
             fontSize: 25,

@@ -3,9 +3,11 @@ import { StyleSheet, Text, View, ScrollView, SafeAreaView } from 'react-native';
 
 export default function Card() {
   return (
-    <View style={styles.container}>
+    <View >
+      <View style={styles.container}>
       <Text style={styles.text}>card teste</Text>
       <StatusBar style="auto" />
+      </View>
     </View>
   );
 }
@@ -14,10 +16,15 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'grey',
-    paddingTop: 200,
+    height: 100,
+    borderRadius: 20,
+    justifyContent: "center",
+    alignItems: 'center',
+    margin: 20,
   },
   text: {
-    justifyContent: "center",
-  }
+    backgroundColor: 'black',
+    color: '#fff'
+  },
   
 });
