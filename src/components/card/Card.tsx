@@ -1,13 +1,21 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, ScrollView, SafeAreaView } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, SafeAreaView, TouchableOpacity, TouchableOpacityProps } from 'react-native';
 
-export default function Card() {
+type Props = {
+  data: Pokemon[];
+} & TouchableOpacityProps
+
+export default function Card({data, ...rest} : Props) {
   return (
-    <View >
-      <View style={styles.container}>
-      <Text style={styles.text}>card teste</Text>
-      <StatusBar style="auto" />
-      </View>
+    <View>
+
+      {data.map((item) =>{
+        return(
+          <View style={styles.container}>
+            <Text>{item.name}</Text>
+          </View>
+        )
+      })}
     </View>
   );
 }
@@ -15,7 +23,7 @@ export default function Card() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'grey',
+    backgroundColor: '#dcdcdc',
     height: 100,
     borderRadius: 20,
     justifyContent: "center",
@@ -26,5 +34,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'black',
     color: '#fff'
   },
-  
+  bottomFix: {
+    marginBottom: 200,
+  },
 });
