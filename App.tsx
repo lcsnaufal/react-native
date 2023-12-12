@@ -6,6 +6,7 @@ import Home from './src/screens/Home/index'
 import Teste from './src/screens/Teste';
 import Front from './src/screens/Front';
 
+
 type StackNavigatorParamsList = {
   Home: undefined;
   Teste: undefined;
@@ -19,8 +20,7 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator initialRouteName='Home'>
         <Stack.Screen name='Home' component={Home} options={{
-          title: 'Tela Principal',
-          headerTitleAlign: 'center',
+          headerShown: false,
         }}/>
         <Stack.Screen name='Teste' component={Teste} />
         <Stack.Screen name='Front' component={Front} />
