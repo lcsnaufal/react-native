@@ -1,19 +1,20 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView, ScrollView } from 'react-native';
 import SearchBar from '../searchBar/SearchBar';
-import Bullets from '../bullets/Bullets';
+import { FontAwesome5 } from '@expo/vector-icons'; 
+import { FontAwesome } from '@expo/vector-icons';
+
 
 export default function Header(){
     return(
         <SafeAreaView style={styles.headerView}>
             <StatusBar style='auto'/>
             <View style={styles.headerTopElements}>
-                <Text>Imagem</Text>
-                <Text>Esse é um teste</Text>
-                <Text>Ícone</Text>
+                <FontAwesome name="user-circle-o" size={24} color="black" />
+                {/* <Text>Esse é um teste</Text> */}
+                <FontAwesome5 name="bell" size={24} color="black" />
             </View>
             <SearchBar/>
-            <Bullets/>
         </SafeAreaView>
     )
 }

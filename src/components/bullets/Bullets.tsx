@@ -1,30 +1,36 @@
-import { Text, View, FlatList } from 'react-native';
+import { Text, View, TouchableOpacity, StyleSheet, TouchableOpacityProps } from 'react-native';
 import bullets from '../../services/bullets';
 
 export default function Bullets(){
 
-    // interface MeuItem {
-    //     id: string;
-    //     texto: string;
-    // }
-
-    // const data = [
-    //     { id: '1', texto: 'Teste Pilula'}
-    // ];
-
-    // const renderItem = ({ item: MeuItem }) => (
-    //     <View>
-    //         <Text>{item.texto}</Text>
-    //     </View>
-    // )
-
     return(
-        <View>
+        <View style={styles.bulletView}>
             {bullets.map((item) =>{
                 return(
-                <Text>{item.name}</Text>
+                    <TouchableOpacity style = {styles.touchableBtn}>
+                        <Text style = {styles.touchableText}>{item.name}</Text>
+                    </TouchableOpacity>
                 )
             })}
         </View>
     );
 }
+
+const styles = StyleSheet.create({
+    bulletView: {
+        flexDirection: 'row',
+    },
+    touchableBtn: {
+        backgroundColor: '#dcdcdc',
+        borderRadius: 45,
+        padding: 10,
+        marginHorizontal: 5,
+
+    
+    },
+    touchableText: {
+        
+    }
+
+
+})

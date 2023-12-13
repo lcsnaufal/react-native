@@ -6,7 +6,11 @@ import { useNavigation, NavigationProp } from '@react-navigation/native';
 import { getAllPokemon } from '../../controllers/pokemonController';
 import { useState, useEffect } from 'react';
 import Header from '../../components/header/Header';
-import SearchBar from '../../components/searchBar/SearchBar';
+import Bullets from '../../components/bullets/Bullets';
+import Carrossel from '../../components/carrossel/Carrossel';
+import ImageFundo from '../../../assets/paisagem.jpg';
+import { Image } from 'react-native';
+
 export default function Home() {
     const { navigate } = useNavigation<NavigationProp<any>>();
 
@@ -18,20 +22,23 @@ export default function Home() {
 
     return (
         <ScrollView>
-          <Header/>
-          {/* <Text style={styles.text}>teste !</Text> */}
-          {/* <InputData/>
-          <Btn/>
-          <Text>Teste</Text>
-          <TouchableOpacity style={styles.btnText} onPress= {() => navigate('Teste')}>
-            <Text>Ir para a tela teste</Text>
-          </TouchableOpacity>
-          <Card data = {pokemons}/> */}
+          <View style = {styles.mainView}>
+            <Header/>
+            <ScrollView horizontal={true}>
+              <Bullets/>
+            </ScrollView>
+            <Carrossel data={pokemons}/>
+
+          </View>
         </ScrollView>
     );
   }
   
+
   const styles = StyleSheet.create({
+    mainView: {
+      backgroundColor: 'white',
+    },
     text: {
       backgroundColor: "black",
       color: "white",
@@ -47,3 +54,15 @@ export default function Home() {
 
     },
   });
+
+
+              
+            {/* <Text style={styles.text}>teste !</Text> */}
+            {/* <InputData/>
+            <Btn/>
+            <Text>Teste</Text>
+            <TouchableOpacity style={styles.btnText} onPress= {() => navigate('Teste')}>
+              <Text>Ir para a tela teste</Text>
+            </TouchableOpacity>
+            <Card data = {pokemons}/> */}
+            {/* <Image source={ImageFundo}/> */}

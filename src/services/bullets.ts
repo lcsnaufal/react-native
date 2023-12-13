@@ -1,5 +1,3 @@
-import React from 'react';
-
 const bullets = [
     {
         name: 'primeiro'
@@ -9,6 +7,15 @@ const bullets = [
     },
     {
         name: 'terceiro'
+    },
+    {
+        name: 'quarto'
+    },
+    {
+        name: 'quintodwaawddawadw'
+    },
+    {
+        name: 'sexto'
     },
 ];
 
